@@ -10,7 +10,10 @@ test('BGG message uses BBCode bold formatting and a correct breakdown without gr
     '[b]Game:[/b] EUR 50.00',
     '[b]DHL shipping to Austria[/b] (tracking number included, insured up to EUR 500): EUR 17.49',
     '[b]PayPal fee:[/b] EUR 2.70', '',
-    '[b]Total: EUR 50.00 + EUR 17.49 + EUR 2.70 = EUR 70.19[/b]'
+    '[b]Total: EUR 50.00 + EUR 17.49 + EUR 2.70 = EUR 70.19[/b]', '',
+    '[b]PayPal payment link:[/b] [url=https://paypal.me/jensgiehl]paypal.me/jensgiehl[/url]',
+    'PayPal.Me is an official PayPal website. This is my payment link, not my PayPal username; please open the link to make your payment.', '',
+    'Once I have received your payment, I will send you the DHL tracking number promptly.'
   ].join('\n'));
   assert.doesNotMatch(message, /%|\bkg\b/u);
 });

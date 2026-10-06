@@ -16,6 +16,8 @@ Alle Beträge werden in ganzen Cent verarbeitet. Der Aufschlag wird kaufmännisc
 
 Neben „Gesamtpreis kopieren“ gibt es „BGG-Text kopieren“. Der Button kopiert eine kurze englische Nachricht mit Zeilenumbrüchen und Absätzen für BoardGameGeek/GeekMail. Sie beginnt direkt mit dem Warenpreis, ohne Begrüßung, und enthält DHL-Versand ins gewählte Land mit Trackingnummer und Versicherung bis 500 EUR, den PayPal-Betrag und die Rechnung zur Gesamtsumme. Die Beschriftungen und die gesamte Zeile mit dem Gesamtpreis werden mit der [BoardGameGeek-Formatierung](https://boardgamegeek.com/wiki/page/Simple_Forum_Formatting) `[b]…[/b]` fett hervorgehoben. Prozentangabe und Paketgewicht werden ausgelassen. Der Nachrichtentext wird auf der Seite nicht angezeigt. Die Zwischenablage benötigt HTTPS oder localhost; ohne gültigen Warenpreis bleiben beide Kopierbuttons deaktiviert. [DHL bestätigt Tracking und Versicherung für Paket International](https://www.dhl.de/de/privatkunden/hilfe-kundenservice/themen/international/export.html).
 
+Der BGG-Text enthält außerdem den fest hinterlegten persönlichen Zahlungslink [paypal.me/jensgiehl](https://paypal.me/jensgiehl) als klickbaren BGG-Link. Er erklärt, dass PayPal.Me eine offizielle PayPal-Webseite ist und die vollständige Adresse ein Zahlungslink statt eines PayPal-Benutzernamens ist. Abschließend wird angekündigt, die DHL-Sendungsnummer nach Zahlungseingang zeitnah zu senden. Bei Wiederverwendung des Rechners für andere Verkäufer muss der Link in `site/message.js` angepasst werden.
+
 Die Oberfläche beginnt direkt mit dem Rechner, ohne Header. Im Footer wird der letzte erfolgreiche DHL-Abruf mit Datum und Uhrzeit für Europe/Berlin angezeigt.
 
 ## Preisquelle und Geltungsbereich
