@@ -7,21 +7,8 @@ import { countries } from './countries.mjs';
 validatePriceData(JSON.parse(await readFile(new URL('../site/data/dhl-prices.json', import.meta.url), 'utf8')));
 const version = '5.3.8';
 const checksum = '8d3dbf15d315cf9a32656cc17b5ec42e7c77479550e6a1afcd1ea0c18c7846df';
-const cache = new URL(`../.cache/bootstrap-${version}.jar`, import.meta.url);
-let bytes;
-try {
-  bytes = await readFile(cache);
-} catch (error) {
-  if (error.code !== 'ENOENT') throw error;
-  const response = await fetch(`https://repo.maven.apache.org/maven2/org/webjars/bootstrap/${version}/bootstrap-${version}.jar`, {
-    signal: AbortSignal.timeout(30000)
-  });
-  if (!response.ok) throw new Error(`Bootstrap WebJar download failed: HTTP ${response.status}.`);
-  bytes = Buffer.from(await response.arrayBuffer());
-}
+const bytes = await readFile(new URL(`../vendor/bootstrap-${version}.jar`, import.meta.url));
 if (createHash('sha256').update(bytes).digest('hex') !== checksum) throw new Error('Bootstrap WebJar checksum mismatch.');
-await mkdir(new URL('../.cache/', import.meta.url), { recursive: true });
-await writeFile(cache, bytes);
 const jar = new AdmZip(bytes);
 const asset = jar.getEntry(`META-INF/resources/webjars/bootstrap/${version}/css/bootstrap.min.css`);
 if (!asset) throw new Error('Bootstrap CSS is missing from the WebJar.');
