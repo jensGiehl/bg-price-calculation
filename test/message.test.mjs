@@ -4,14 +4,13 @@ import { createBggMessage } from '../site/message.js';
 import { calculateTotal } from '../site/calculator.js';
 import { countries } from '../scripts/countries.mjs';
 
-test('BGG message provides an English shipping quote and correct breakdown without percentage or weight', () => {
+test('BGG message uses BBCode bold formatting and a correct breakdown without greeting, percentage or weight', () => {
   const message = createBggMessage(calculateTotal(5000, 1749), 'AT');
   assert.equal(message, [
-    'Hi!', '',
-    'Game: EUR 50.00',
-    'DHL shipping to Austria (tracking number included, insured up to EUR 500): EUR 17.49',
-    'PayPal fee: EUR 2.70', '',
-    'Total: EUR 50.00 + EUR 17.49 + EUR 2.70 = EUR 70.19'
+    '[b]Game:[/b] EUR 50.00',
+    '[b]DHL shipping to Austria[/b] (tracking number included, insured up to EUR 500): EUR 17.49',
+    '[b]PayPal fee:[/b] EUR 2.70', '',
+    '[b]Total: EUR 50.00 + EUR 17.49 + EUR 2.70 = EUR 70.19[/b]'
   ].join('\n'));
   assert.doesNotMatch(message, /%|\bkg\b/u);
 });

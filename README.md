@@ -7,14 +7,14 @@ Die Website ist über GitHub Pages unter [https://jensgiehl.github.io/bg-price-c
 ## Berechnung
 
 1. Warenpreis in Euro eingeben, z. B. `50,00` oder `50.00`.
-2. DHL Paket bis 2, 5 oder 10 kg wählen.
+2. DHL Paket bis 2, 5 oder 10 kg wählen. Standardmäßig ist das 5-kg-Paket ausgewählt.
 3. Eines der 27 EU-Länder mit lokaler SVG-Flagge auswählen. Standard ist Deutschland; der Warenpreis startet leer.
 
 `Gesamtpreis = Warenpreis + Versand + rund((Warenpreis + Versand) × 0,04)`
 
 Alle Beträge werden in ganzen Cent verarbeitet. Der Aufschlag wird kaufmännisch auf Cent gerundet. Beispiel: 50,00 € Warenpreis + 17,49 € Versand + 2,70 € Aufschlag = **70,19 €**. Auch ein Warenpreis von 0 € ist möglich. Die 4 % sind ein vorgegebener Aufschlag, keine Abfrage tatsächlicher PayPal-Gebühren und keine Hochrechnung zur vollständigen Deckung abgezogener Gebühren.
 
-Neben „Gesamtpreis kopieren“ gibt es „BGG-Text kopieren“. Der Button kopiert eine kurze englische Nachricht als Klartext mit Zeilenumbrüchen und Absätzen für BoardGameGeek/GeekMail. Sie enthält den Warenpreis, DHL-Versand ins gewählte Land mit Trackingnummer und Versicherung bis 500 EUR, den PayPal-Betrag und die Rechnung zur Gesamtsumme. Prozentangabe und Paketgewicht werden ausgelassen. Der Nachrichtentext wird auf der Seite nicht angezeigt. Die Zwischenablage benötigt HTTPS oder localhost; ohne gültigen Warenpreis bleiben beide Kopierbuttons deaktiviert. [DHL bestätigt Tracking und Versicherung für Paket International](https://www.dhl.de/de/privatkunden/hilfe-kundenservice/themen/international/export.html).
+Neben „Gesamtpreis kopieren“ gibt es „BGG-Text kopieren“. Der Button kopiert eine kurze englische Nachricht mit Zeilenumbrüchen und Absätzen für BoardGameGeek/GeekMail. Sie beginnt direkt mit dem Warenpreis, ohne Begrüßung, und enthält DHL-Versand ins gewählte Land mit Trackingnummer und Versicherung bis 500 EUR, den PayPal-Betrag und die Rechnung zur Gesamtsumme. Die Beschriftungen und die gesamte Zeile mit dem Gesamtpreis werden mit der [BoardGameGeek-Formatierung](https://boardgamegeek.com/wiki/page/Simple_Forum_Formatting) `[b]…[/b]` fett hervorgehoben. Prozentangabe und Paketgewicht werden ausgelassen. Der Nachrichtentext wird auf der Seite nicht angezeigt. Die Zwischenablage benötigt HTTPS oder localhost; ohne gültigen Warenpreis bleiben beide Kopierbuttons deaktiviert. [DHL bestätigt Tracking und Versicherung für Paket International](https://www.dhl.de/de/privatkunden/hilfe-kundenservice/themen/international/export.html).
 
 Die Oberfläche beginnt direkt mit dem Rechner, ohne Header. Im Footer wird der letzte erfolgreiche DHL-Abruf mit Datum und Uhrzeit für Europe/Berlin angezeigt.
 
