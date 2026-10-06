@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "currency": "EUR",
+  "origin": "DE",
+  "product": "DHL Paket",
+  "pricing": "online",
+  "checkedAt": "2026-10-06T18:40:36.996Z",
+  "pricesChangedAt": "2026-10-06T18:36:48.204Z",
+  "sources": {
+    "eu": "https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/preise-international.html",
+    "domestic": "https://www.dhl.de/de/privatkunden/pakete-versenden/deutschlandweit-versenden/preise-national.html"
+  },
+  "prices": {
+    "eu": {
+      "2": 1449,
+      "5": 1749,
+      "10": 2249
+    },
+    "domestic": {
+      "2": 619,
+      "5": 769,
+      "10": 1049
+    }
+  },
+  "countries": [
+    {
+      "code": "BE",
+      "name": "Belgien",
+      "flag": "🇧🇪",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "BG",
+      "name": "Bulgarien",
+      "flag": "🇧🇬",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "DK",
+      "name": "Dänemark",
+      "flag": "🇩🇰",
+      "zone": "eu",
+      "note": "Gilt nicht für Färöer und Grönland."
+    },
+    {
+      "code": "DE",
+      "name": "Deutschland",
+      "flag": "🇩🇪",
+      "zone": "domestic",
+      "note": ""
+    },
+    {
+      "code": "EE",
+      "name": "Estland",
+      "flag": "🇪🇪",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "FI",
+      "name": "Finnland",
+      "flag": "🇫🇮",
+      "zone": "eu",
+      "note": "Gilt nicht für die Ålandinseln."
+    },
+    {
+      "code": "FR",
+      "name": "Frankreich",
+      "flag": "🇫🇷",
+      "zone": "eu",
+      "note": "Gilt nicht für überseeische Gebiete und Departements."
+    },
+    {
+      "code": "GR",
+      "name": "Griechenland",
+      "flag": "🇬🇷",
+      "zone": "eu",
+      "note": "Gilt nicht für Berg Athos."
+    },
+    {
+      "code": "IE",
+      "name": "Irland",
+      "flag": "🇮🇪",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "IT",
+      "name": "Italien",
+      "flag": "🇮🇹",
+      "zone": "eu",
+      "note": "Gilt nicht für Livigno und Campione d’Italia."
+    },
+    {
+      "code": "HR",
+      "name": "Kroatien",
+      "flag": "🇭🇷",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "LV",
+      "name": "Lettland",
+      "flag": "🇱🇻",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "LT",
+      "name": "Litauen",
+      "flag": "🇱🇹",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "LU",
+      "name": "Luxemburg",
+      "flag": "🇱🇺",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "MT",
+      "name": "Malta",
+      "flag": "🇲🇹",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "NL",
+      "name": "Niederlande",
+      "flag": "🇳🇱",
+      "zone": "eu",
+      "note": "Gilt nicht für außereuropäische Gebiete."
+    },
+    {
+      "code": "AT",
+      "name": "Österreich",
+      "flag": "🇦🇹",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "PL",
+      "name": "Polen",
+      "flag": "🇵🇱",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "PT",
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "RO",
+      "name": "Rumänien",
+      "flag": "🇷🇴",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "SE",
+      "name": "Schweden",
+      "flag": "🇸🇪",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "SK",
+      "name": "Slowakei",
+      "flag": "🇸🇰",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "SI",
+      "name": "Slowenien",
+      "flag": "🇸🇮",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "ES",
+      "name": "Spanien",
+      "flag": "🇪🇸",
+      "zone": "eu",
+      "note": "Gilt nicht für die Kanarischen Inseln, Ceuta und Melilla."
+    },
+    {
+      "code": "CZ",
+      "name": "Tschechien",
+      "flag": "🇨🇿",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "HU",
+      "name": "Ungarn",
+      "flag": "🇭🇺",
+      "zone": "eu",
+      "note": ""
+    },
+    {
+      "code": "CY",
+      "name": "Zypern",
+      "flag": "🇨🇾",
+      "zone": "eu",
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#174c43">
+  <meta name="description" content="Warenpreis, DHL-Versand und 4 % PayPal-Aufschlag: Berechne deinen Gesamtpreis für alle EU-Länder.">
+  <title>Paketpreis · Dein Gesamtpreis für die EU</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main class="container main-content" aria-label="Preisrechner">
+    <div id="load-error" class="alert alert-danger" role="alert" hidden>
+      Die Versandpreise konnten nicht geladen werden. Bitte versuche es erneut.
+      <button type="button" class="btn btn-sm btn-outline-danger ms-2" id="retry">Erneut laden</button>
+    </div>
+    <div class="calculator-grid">
+      <section class="input-card" aria-labelledby="input-title">
+        <div class="section-heading"><h2 id="input-title">Dein Versand</h2><span class="small text-muted">3 einfache Schritte</span></div>
+        <form id="calculator" novalidate>
+          <fieldset id="fields" disabled>
+            <div class="form-step">
+              <label for="item-price" class="step-label"><span class="step-number">01</span> Warenpreis</label>
+              <div class="price-input-wrap"><input id="item-price" class="form-control price-input" type="text" inputmode="decimal" autocomplete="off" maxlength="10" placeholder="z. B. 50,00" aria-describedby="price-help price-error"><span aria-hidden="true">€</span></div>
+              <p id="price-help" class="field-help">Der Preis deines Artikels, ohne Versand.</p>
+              <p id="price-error" class="field-error" hidden>Bitte einen gültigen Preis eingeben, z. B. 50,00. Maximal 9.999.999,99 €.</p>
+            </div>
+            <fieldset class="form-step package-step">
+              <legend class="step-label"><span class="step-number">02</span> Paketgröße</legend>
+              <div class="package-options">
+                <input class="btn-check" type="radio" name="weight" id="weight-2" value="2" checked>
+                <label class="package-option" for="weight-2"><span class="parcel-icon parcel-small" aria-hidden="true">◇</span><strong>2 kg</strong><span>bis 60 × 30 × 15 cm</span></label>
+                <input class="btn-check" type="radio" name="weight" id="weight-5" value="5">
+                <label class="package-option" for="weight-5"><span class="parcel-icon" aria-hidden="true">◇</span><strong>5 kg</strong><span>bis 120 × 60 × 60 cm</span></label>
+                <input class="btn-check" type="radio" name="weight" id="weight-10" value="10">
+                <label class="package-option" for="weight-10"><span class="parcel-icon parcel-large" aria-hidden="true">◇</span><strong>10 kg</strong><span>bis 120 × 60 × 60 cm</span></label>
+              </div>
+              <p class="field-help">Maximalgewicht. Bei 5 und 10 kg: Gurtmaß bis 300 cm.</p>
+            </fieldset>
+            <div class="form-step country-step">
+              <label class="step-label" id="country-label" for="country"><span class="step-number">03</span> Zielland</label>
+              <div class="country-picker" id="country-picker">
+                <button id="country" class="form-select country-trigger" type="button" role="combobox" aria-haspopup="listbox" aria-controls="country-options" aria-expanded="false" aria-labelledby="country-label" aria-describedby="country-note">Preise werden geladen …</button>
+                <div id="country-options" class="country-options" role="listbox" aria-labelledby="country-label" hidden></div>
+              </div>
+              <p class="field-help" id="country-note">Versand ab Deutschland · 27 EU-Länder</p>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+      <section class="result-card" aria-labelledby="result-title">
+        <div class="result-top"><span class="result-eyebrow" id="result-title">DEIN GESAMTPREIS</span><span class="result-symbol" aria-hidden="true">↗</span></div>
+        <div class="total" id="total" role="status" aria-live="polite" aria-atomic="true">—</div>
+        <p class="total-description" id="total-description">Gib deinen Warenpreis ein, um loszulegen.</p>
+        <dl class="breakdown">
+          <div><dt>Warenpreis</dt><dd id="item-result">—</dd></div>
+          <div><dt>DHL-Versand <span id="weight-description">· 2 kg</span></dt><dd id="shipping-result">—</dd></div>
+          <div class="fee-row"><dt>PayPal-Aufschlag <span>· 4 %</span></dt><dd id="fee-result">—</dd></div>
+          <div class="final-row"><dt>Gesamt</dt><dd id="total-result">—</dd></div>
+        </dl>
+        <div class="copy-actions">
+          <button class="btn copy-button" type="button" id="copy" disabled>Gesamtpreis kopieren <span aria-hidden="true">↗</span></button>
+          <button class="btn copy-button copy-message-button" type="button" id="copy-message" disabled>BGG-Text kopieren <span aria-hidden="true">↗</span></button>
+        </div>
+        <p class="copy-feedback" id="copy-feedback" role="status"></p>
+        <div class="formula-note">So rechnen wir:<br><strong>(Warenpreis + Versand) × 1,04</strong></div>
+      </section>
+    </div>
+    <aside class="info-note"><strong>Gut zu wissen</strong><p>Wir verwenden die DHL-Privatkundenpreise der Online-Frankierung. Die 4 % sind dein gewählter Aufschlag; tatsächliche PayPal-Gebühren können abweichen. Sondergebiete und Zusatzleistungen sind nicht enthalten.</p></aside>
+    <noscript><p class="alert alert-warning">Bitte aktiviere JavaScript, um den Rechner zu verwenden.</p></noscript>
+  </main>
+  <footer class="container site-footer">
+    <div class="data-status"><span class="status-dot" id="status-dot" aria-hidden="true"></span><span id="price-status" role="status">DHL-Preise werden geladen …</span></div>
+    <a href="https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/preise-international.html" target="_blank" rel="noopener noreferrer">DHL-Preisübersicht ↗</a>
+    <span class="footer-disclaimer">Kein offizielles Angebot von DHL oder PayPal.</span>
+  </footer>
+</body>
+</html>
