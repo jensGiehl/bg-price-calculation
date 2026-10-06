@@ -2,6 +2,8 @@
 
 Mobil optimierter Rechner für Warenpreis, DHL-Privatkundenversand ab Deutschland und einen PayPal-Aufschlag von 4 %. Statische Website für GitHub Pages, ohne Backend, Datenbank oder Docker.
 
+Die Website ist über GitHub Pages unter [https://jensgiehl.github.io/bg-price-calculation/](https://jensgiehl.github.io/bg-price-calculation/) erreichbar.
+
 ## Berechnung
 
 1. Warenpreis in Euro eingeben, z. B. `50,00` oder `50.00`.
